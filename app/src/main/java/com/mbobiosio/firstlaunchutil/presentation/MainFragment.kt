@@ -8,11 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.mbobiosio.firstlaunchutil.databinding.FragmentMainBinding
-import com.mbobiosio.firstlaunchutil.repository.DataStoreRepository
+import com.mbobiosio.firstlaunchutil.util.observeOneTime
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import javax.inject.Inject
+import timber.log.Timber
 import kotlin.properties.Delegates
 
 @AndroidEntryPoint
@@ -22,10 +21,7 @@ class MainFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val viewModel by viewModels<PrefViewModel>()
-
-    @Inject
-    lateinit var dataStoreRepository: DataStoreRepository
+    private val viewModel by viewModels<AppViewModel>()
 
     private var message by Delegates.notNull<Boolean>()
 
@@ -47,8 +43,9 @@ class MainFragment : Fragment() {
 
                 // Get the current first launch status
                 lifecycleScope.launch {
-                    dataStoreRepository.getFirstLaunch().collectLatest {
+                    viewModel.isFirstLaunch.observeOneTime(viewLifecycleOwner) {
                         message = it
+                        Timber.d("$it")
                     }
                 }
             }

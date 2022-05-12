@@ -6,8 +6,8 @@ This application also shows how to use Hilt and viewModel in a simple way.
 ### Details
 - **Operating System** : Android
 - **Programming Language**: [Kotlin](https://kotlinlang.org)
-- **Dipendency Injection** : [Hilt](https://dagger.dev/hilt/)
+- **Dependency Injection** : [Hilt](https://dagger.dev/hilt/)
 - **Fragment Management** : [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started)
-- **Data Persistance and Cache** : [DataStore](https://developer.android.com/topic/libraries/architecture/datastore)
+- **Data Persistence and Cache** : [DataStore](https://developer.android.com/topic/libraries/architecture/datastore)
 - **Threading** : [Coroutines Kotlin Flow](https://developer.android.com/kotlin/flow)
 - **Design** : [Material Design, Dark Mode and Light Mode](https://material.io)
