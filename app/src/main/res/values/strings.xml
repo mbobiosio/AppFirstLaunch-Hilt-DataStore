@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FirstLaunchUtil</string>
+    <string name="status">Check Status</string>
+    <string name="previous">Previous</string>
+    <string name="set_first_launch">Complete First Launch</string>
+    <string name="remove_first_launch">Reset First Launch</string>
+</resources>
